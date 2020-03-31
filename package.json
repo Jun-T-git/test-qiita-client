@@ -1,23 +1,19 @@
 {
-  "name": "react-sample",
+  "name": "test-twitter-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "next": "^9.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "browserslist": {
     "production": [
@@ -32,7 +28,17 @@
     ]
   },
   "devDependencies": {
-    "ts-loader": "^6.2.2",
-    "typescript": "^3.8.3"
+    "@types/axios": "^0.14.0",
+    "@types/node": "^13.9.8",
+    "@types/react": "^16.9.29",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/typescript-estree": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.2"
   }
 }
