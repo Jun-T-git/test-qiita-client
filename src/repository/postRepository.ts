@@ -11,21 +11,24 @@ export default class PostRepositoryImpl implements PostRepository {
   }
 
   async findAll(): Promise<Post[]> {
-    const res = await this.postDriver.findAll();
-    return res.map(
-      (postEntity) =>
-        new Post(
-          postEntity.id,
-          new User(
-            postEntity.user.id,
-            postEntity.user.screen_name,
-            postEntity.user.name,
-            postEntity.user.profile_image_url
-          ),
-          postEntity.text,
-          postEntity.favorite_count,
-          postEntity.retweet_count
-        )
-    );
+    const { posts, errors } = await this.postDriver.findAll();
+    if (posts !== undefined){
+      return posts.map(
+          (postEntity) =>
+              new Post(
+                  postEntity.id,
+                  new User(
+                      postEntity.user.id,
+                      postEntity.user.screen_name,
+                      postEntity.user.name,
+                      postEntity.user.profile_image_url
+                  ),
+                  postEntity.text,
+                  postEntity.favorite_count,
+                  postEntity.retweet_count
+              )
+      );
+    }
+    return []
   }
 }
