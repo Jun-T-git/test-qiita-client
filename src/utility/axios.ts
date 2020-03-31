@@ -7,7 +7,7 @@ export type LoginError = {
 
 export const initAxios = (): AxiosInstance => {
   return axiosBase.create({
-    baseURL: `${apiUrl}/1.1/statuses/`,
+    baseURL: `/api/1.1/statuses/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${
@@ -26,7 +26,7 @@ export const login = async (): Promise<{
       access_token: string;
     }> = await axiosBase
       .create({
-        baseURL: `${apiUrl}/oauth2/`,
+        baseURL: `/api/oauth2/`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
           Authorization: `Basic ${apiKey}`,

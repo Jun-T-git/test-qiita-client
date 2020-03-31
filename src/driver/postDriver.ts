@@ -8,7 +8,7 @@ export default class PostDriverImpl implements PostDriver {
         'user_timeline.json?screen_name=katsuyatakasu'
       );
     } catch (e) {
-      console.log(e)
+      console.log(e);
       return { errors: e.errors };
     }
   }
