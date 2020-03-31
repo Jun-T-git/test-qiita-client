@@ -32,6 +32,7 @@ export default class PostRepositoryImpl implements PostRepository {
     } else if (errors) {
       if (errors[0].code == 215) {
         await login();
+        this.findAll()
       }
     }
     return [];
