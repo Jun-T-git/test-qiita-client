@@ -100,7 +100,7 @@ export type User = {
   profile_background_image_url: string | null;
   profile_background_image_url_https: string | null;
   profile_background_tile: string | null;
-  profile_image_url: string | null;
+  profile_image_url: string;
   profile_image_url_https: string | null;
   profile_banner_url: string | null;
   profile_link_color: string | null;
