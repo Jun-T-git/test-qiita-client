@@ -4,7 +4,12 @@ export default interface postDriver {
 
 export type PostsJson = {
   posts?: PostJson[];
-  errors?: Error;
+  errors?: PostError;
+};
+
+export type PostError = {
+  code: number;
+  message: string;
 };
 
 export type PostJson = {

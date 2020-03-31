@@ -18,8 +18,6 @@ const Posts = ({ useCase }: Props) => {
     setPosts(await useCase.fetchPosts());
   };
 
-  console.log(posts);
-
   return (
     <>
       {posts.map((post) => (
