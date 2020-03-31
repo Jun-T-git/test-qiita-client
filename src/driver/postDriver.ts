@@ -1,4 +1,4 @@
-import { initAxios } from '~/driver/axios';
+import { initAxios } from '../utility/axios';
 import PostDriver, { PostsJson } from '~/interface/driver/postDriver';
 
 export default class PostDriverImpl implements PostDriver {
@@ -8,7 +8,8 @@ export default class PostDriverImpl implements PostDriver {
         'user_timeline.json?screen_name=katsuyatakasu'
       );
     } catch (e) {
-      return { errors: e.response.data.errors };
+      console.log(e)
+      return { errors: e.errors };
     }
   }
 }
