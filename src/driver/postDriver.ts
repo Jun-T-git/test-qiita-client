@@ -1,5 +1,5 @@
-import { initAxios } from './axios';
-import PostDriver, { PostsJson } from '../interface/driver/postDriver';
+import { initAxios } from '~/driver/axios';
+import PostDriver, { PostsJson } from '~/interface/driver/postDriver';
 
 export default class PostDriverImpl implements PostDriver {
   async findAll(): Promise<PostsJson> {

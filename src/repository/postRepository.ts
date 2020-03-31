@@ -1,7 +1,7 @@
-import PostRepository from '../interface/repository/postRepository';
-import PostDriver from '../interface/driver/postDriver';
-import { Post } from '../domain/post';
-import { User } from '../domain/user';
+import PostRepository from '~/interface/repository/postRepository';
+import PostDriver from '~/interface/driver/postDriver';
+import { Post } from '~/domain/post';
+import { User } from '~/domain/user';
 
 export default class PostRepositoryImpl implements PostRepository {
   private readonly postDriver: PostDriver;
