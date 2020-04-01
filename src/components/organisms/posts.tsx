@@ -1,4 +1,4 @@
-import PostItem from '../postItem';
+import PostItem from '~/components/postItem';
 import {PostViewModel} from "~/interface/presenter/postPresenter";
 
 type Props = {
