@@ -1,5 +1,5 @@
 import PostRepository from '~/interface/repository/postRepository';
-import PostDriver, {PostJson} from '~/interface/driver/postDriver';
+import PostDriver, { PostJson } from '~/interface/driver/postDriver';
 import { login } from '../utility/axios';
 import { Post } from '../domain/post';
 import { User } from '../domain/user';
@@ -26,13 +26,14 @@ export default class PostRepositoryImpl implements PostRepository {
             ),
             postEntity.text,
             postEntity.favorite_count,
-            postEntity.retweet_count
+            postEntity.retweet_count,
+            new Date(postEntity.created_at)
           )
       );
     } else if (errors) {
       if (errors[0].code == 215) {
         await login();
-        this.findAll()
+        this.findAll();
       }
     }
     return [];
