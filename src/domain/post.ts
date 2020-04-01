@@ -23,16 +23,4 @@ export class Post {
     this.retweet = retweet;
     this.createdAt = createdAt;
   }
-  get userId(): number {
-    return this.user.id;
-  }
-  get userScreenName(): string {
-    return this.user.screenName;
-  }
-  get userName(): string {
-    return this.user.name;
-  }
-  get userIconUrl(): string {
-    return this.user.iconUrl;
-  }
 }
