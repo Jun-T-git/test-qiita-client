@@ -2,6 +2,7 @@ import PostPresenter, {
   PostViewModel,
 } from '../interface/presenter/postPresenter';
 import { PostUseCase } from '~/interface/useCase/postUseCase';
+import moment from 'moment';
 
 export default class PostPresenterImpl implements PostPresenter {
   private readonly useCase: PostUseCase;
@@ -23,15 +24,7 @@ export default class PostPresenterImpl implements PostPresenter {
             post.text,
             post.favorite,
             post.retweet,
-            String(post.createdAt.getFullYear()) +
-              '/' +
-              String(post.createdAt.getMonth()) +
-              '/' +
-              String(post.createdAt.getDate()) +
-              ' ' +
-              String(post.createdAt.getHours()) +
-              ':' +
-              String(post.createdAt.getMinutes())
+            moment(post.createdAt).fromNow()
           )
       );
     }

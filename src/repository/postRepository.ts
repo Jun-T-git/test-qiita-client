@@ -3,6 +3,7 @@ import PostDriver from '~/interface/driver/postDriver';
 import { login } from '../utility/axios';
 import { Post } from '../domain/post';
 import { User } from '../domain/user';
+import moment from "moment";
 
 export default class PostRepositoryImpl implements PostRepository {
   private readonly postDriver: PostDriver;
@@ -27,7 +28,7 @@ export default class PostRepositoryImpl implements PostRepository {
             postEntity.text,
             postEntity.favorite_count,
             postEntity.retweet_count,
-            new Date(postEntity.created_at)
+            moment(postEntity.created_at).toDate()
           )
       );
     } else if (errors) {
