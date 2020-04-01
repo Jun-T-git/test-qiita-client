@@ -1,6 +1,6 @@
 import PostPresenter, {
   PostViewModel,
-} from '~/interface/presenter/postPresenter';
+} from '../interface/presenter/postPresenter';
 import { PostUseCase } from '~/interface/useCase/postUseCase';
 
 export default class PostPresenterImpl implements PostPresenter {

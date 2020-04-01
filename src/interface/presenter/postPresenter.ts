@@ -1,5 +1,3 @@
-import {Post} from "~/domain/post";
-
 export default interface PostPresenter {
     getViewModelList(): Promise<PostViewModel[]>;
 }
