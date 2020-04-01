@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Posts from '../components/posts';
+import Posts from '../components/organisms/posts';
 import PostUseCaseImpl from '../useCase/postUseCase';
 import PostRepositoryImpl from '../repository/postRepository';
 import PostDriverImpl from '../driver/postDriver';
