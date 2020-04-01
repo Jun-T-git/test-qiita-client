@@ -1,5 +1,5 @@
 import PostRepository from '~/interface/repository/postRepository';
-import PostDriver, { PostJson } from '~/interface/driver/postDriver';
+import PostDriver from '~/interface/driver/postDriver';
 import { login } from '../utility/axios';
 import { Post } from '../domain/post';
 import { User } from '../domain/user';
