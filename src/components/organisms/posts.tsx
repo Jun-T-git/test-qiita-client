@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PostUseCase } from '~/interface/useCase/postUseCase';
 import { Post } from '~/domain/post';
-import PostItem from './postItem';
+import PostItem from '../postItem';
 
 type Props = {
   useCase: PostUseCase;
@@ -21,7 +21,9 @@ const Posts = ({ useCase }: Props) => {
   return (
     <>
       {posts.map((post) => (
-        <PostItem key={post.id} post={post} />
+          <div className="mb-5">
+            <PostItem key={post.id} post={post} />
+          </div>
       ))}
     </>
   );
