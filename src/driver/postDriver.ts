@@ -1,4 +1,4 @@
-import { initAxios } from '../utility/axios';
+import { initAxios } from '~/utility/axios';
 import PostDriver, { PostJson, PostsJson } from '~/interface/driver/postDriver';
 
 export default class PostDriverImpl implements PostDriver {

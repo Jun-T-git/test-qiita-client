@@ -1,6 +1,6 @@
 import PostPresenter, {
   PostViewModel,
-} from '../interface/presenter/postPresenter';
+} from '~/interface/presenter/postPresenter';
 import { PostUseCase } from '~/interface/useCase/postUseCase';
 import moment from 'moment';
 

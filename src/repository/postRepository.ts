@@ -1,8 +1,8 @@
 import PostRepository from '~/interface/repository/postRepository';
 import PostDriver from '~/interface/driver/postDriver';
-import { login } from '../utility/axios';
-import { Post } from '../domain/post';
-import { User } from '../domain/user';
+import { login } from '~/utility/axios';
+import { Post } from '~/domain/post';
+import { User } from '~/domain/user';
 import moment from "moment";
 
 export default class PostRepositoryImpl implements PostRepository {

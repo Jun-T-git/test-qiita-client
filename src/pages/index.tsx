@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Posts from '../components/organisms/posts';
-import PostUseCaseImpl from '../useCase/postUseCase';
-import PostRepositoryImpl from '../repository/postRepository';
-import PostDriverImpl from '../driver/postDriver';
-import PostPresenterImpl from "../presenter/postPresenter";
 import {useEffect, useState} from "react";
-import {PostViewModel} from "../interface/presenter/postPresenter";
+import Link from 'next/link';
+import Posts from '~/components/organisms/posts';
+import PostUseCaseImpl from '~/useCase/postUseCase';
+import PostRepositoryImpl from '~/repository/postRepository';
+import PostDriverImpl from '~/driver/postDriver';
+import PostPresenterImpl from "~/presenter/postPresenter";
+import {PostViewModel} from "~/interface/presenter/postPresenter";
 
 const repository = new PostRepositoryImpl(new PostDriverImpl());
 const useCase = new PostUseCaseImpl(repository);
