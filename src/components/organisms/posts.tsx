@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { PostUseCase } from '~/interface/useCase/postUseCase';
-import { Post } from '~/domain/post';
 import PostItem from '../postItem';
+import {PostViewModel} from "~/interface/presenter/postPresenter";
 
 type Props = {
-  useCase: PostUseCase;
+  posts:PostViewModel[]
 };
 
-const Posts = ({ useCase }: Props) => {
-  const [posts, setPosts] = useState<Post[]>([]);
+const Posts = ({ posts }: Props) => {
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  const fetchPosts = async () => {
-    setPosts(await useCase.fetchPosts());
-  };
 
   return (
     <>

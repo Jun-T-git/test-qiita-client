@@ -1,8 +1,8 @@
 import React from 'react';
-import { Post } from '~/domain/post';
+import { PostViewModel } from '~/interface/presenter/postPresenter';
 
 type Props = {
-  post: Post;
+  post: PostViewModel;
 };
 
 const PostItem = ({ post }: Props) => {
@@ -31,17 +31,21 @@ const PostItem = ({ post }: Props) => {
           className="tracking-wider text-white bg-green-500 px-3 py-1 text-xs rounded leading-loose mx-2 font-semibold"
           title=""
         >
-          <i className="fas fa-retweet" aria-hidden="true" /> {post.retweet}
+          <i className="fas fa-retweet" aria-hidden="true" /> {post.retweetCount}
         </span>
 
         <span
           className="tracking-wider text-white bg-red-500 px-3 py-1 text-xs rounded leading-loose mx-2 font-semibold"
           title=""
         >
-          <i className="fas fa-heart" aria-hidden="true" /> {post.favorite}
+          <i className="fas fa-heart" aria-hidden="true" /> {post.favoriteCount}
         </span>
+      </div>
 
-        {/*<span className="font-light text-sm text-gray-600">Mar 10, 2018</span>*/}
+      <div className="flex justify-end">
+        <span className="font-light text-sm text-gray-600">
+          {post.createdAt}
+        </span>
       </div>
     </div>
   );
