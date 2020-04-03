@@ -10,7 +10,7 @@ export type PostsJson = {
 export type PostJson = {
   created_at: string;
   id: number;
-  id_str: number;
+  id_str: string;
   text: string;
   truncated: boolean;
   entities: {
@@ -50,11 +50,11 @@ export type Symbol = {
 };
 
 export type UserMention = {
-  name: string;
-  indices: Array<number>;
-  screen_name: string;
-  id: number;
-  id_str: number;
+  name: string|null;
+  indices: Array<number>|null;
+  screen_name: string|null;
+  id: number|null;
+  id_str: string|null;
 };
 
 export type Url = {
@@ -66,13 +66,13 @@ export type Url = {
 
 export type User = {
   id: number;
-  id_str: number;
+  id_str: string;
   name: string;
   screen_name: string;
-  location: string;
+  location: string|null;
   profile_location: string | null;
-  description: string;
-  url: string;
+  description: string|null;
+  url: string|null;
   entities: {
     url: {
       urls: Array<Url>;
