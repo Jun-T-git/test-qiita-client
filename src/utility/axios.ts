@@ -1,5 +1,5 @@
 import axiosBase, { AxiosInstance, AxiosResponse } from 'axios';
-import { apiKey, apiUrl } from '~/config.dev';
+import { apiKey } from '~/config.dev';
 
 export type LoginError = {
   status?: number;
@@ -7,7 +7,7 @@ export type LoginError = {
 
 export const initAxios = (): AxiosInstance => {
   return axiosBase.create({
-    baseURL: `${apiUrl}/1.1/statuses/`,
+    baseURL: `/api/1.1/statuses/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${
@@ -23,10 +23,10 @@ export const login = async (): Promise<{
 }> => {
   try {
     const data: AxiosResponse<{
-      token: string;
+      access_token: string;
     }> = await axiosBase
       .create({
-        baseURL: `${apiUrl}/oauth2/`,
+        baseURL: `/api/oauth2/`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
           Authorization: `Basic ${apiKey}`,
@@ -35,9 +35,9 @@ export const login = async (): Promise<{
       .post('token?grant_type=client_credentials');
 
     // ローカルストレージにトークンセット
-    localStorage.setItem('token', data.data.token);
+    localStorage.setItem('token', data.data.access_token);
 
-    return { token: data.data.token };
+    return { token: data.data.access_token };
   } catch (e) {
     return {
       error: {
