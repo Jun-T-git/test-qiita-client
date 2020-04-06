@@ -1,7 +1,4 @@
-build:
-  dockerfile: Dockerfile
-  context: .
-  target: dev
+image: nakajimai/next_app:latest
 pipelines:
   default:
     - step:
