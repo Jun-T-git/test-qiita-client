@@ -1,6 +1,5 @@
 import PostRepository from '~/interface/repository/postRepository';
 import PostDriver from '~/interface/driver/postDriver';
-import { login } from '~/utility/axios';
 import { Post } from '~/domain/post';
 import { User } from '~/domain/user';
 import moment from "moment";
@@ -33,8 +32,7 @@ export default class PostRepositoryImpl implements PostRepository {
       );
     } else if (errors) {
       if (errors[0].code == 215) {
-        await login();
-        this.findAll();
+        console.log('No Token')
       }
     }
     return [];

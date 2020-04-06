@@ -1,5 +1,6 @@
 import axiosBase, { AxiosInstance, AxiosResponse } from 'axios';
 import { apiKey } from '~/config.dev';
+import {Auth} from "~/domain/auth";
 
 export type LoginError = {
   status?: number;
@@ -17,10 +18,12 @@ export const initAxios = (): AxiosInstance => {
   });
 };
 
-export const login = async (): Promise<{
+export const fetchToken = async (auth:Auth): Promise<{
   token?: string;
   error?: LoginError;
 }> => {
+  const credentials = btoa(`${auth.key}:${auth.secret}`);
+
   try {
     const data: AxiosResponse<{
       access_token: string;
@@ -29,7 +32,7 @@ export const login = async (): Promise<{
         baseURL: `/api/oauth2/`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-          Authorization: `Basic ${apiKey}`,
+          Authorization: `Basic ${credentials}`,
         },
       })
       .post('token?grant_type=client_credentials');
