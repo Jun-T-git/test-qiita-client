@@ -13,7 +13,7 @@ export default class AuthRepositoryImpl implements AuthRepository {
   async fetch(auth: Auth): Promise<Token> {
       const { token, errors } =  await this.authDriver.fetch(auth);
       if(token){
-          return token
+          return new Token(token)
       }
       return new Token('')
   }

@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import AuthUseCaseImpl from '~/useCase/authuseCase';
+import AuthRepositoryImpl from '~/repository/authRepository';
+import AuthDriverImpl from '~/driver/authDriver';
+import { Auth } from '~/domain/auth';
+import { useRouter } from 'next/router';
 
-const Auth: React.FC = () => {
+const Index: React.FC = () => {
   const [apiKey, setApiKey] = useState<string>('');
   const [apiSecret, setApiSecret] = useState<string>('');
+  const authDriverImpl = new AuthDriverImpl();
+  const authRepositoryImpl = new AuthRepositoryImpl(authDriverImpl);
+  const authUseCase = new AuthUseCaseImpl(authRepositoryImpl);
+  const router = useRouter();
 
   const handleKeyChange = (e) => {
     setApiKey(e.target.value);
@@ -14,8 +23,18 @@ const Auth: React.FC = () => {
   };
 
   const handleGetTokenClick = (e) => {
-    console.log({ apiKey });
-    console.log({ apiSecret });
+    authUseCase
+      .fetchToken(new Auth(apiKey, apiSecret))
+      .then(handleSuccessGetToken, handleFailureGetToken);
+  };
+
+  const handleSuccessGetToken = (e) => {
+    console.log('Get Token');
+    router.push('/posts');
+  };
+
+  const handleFailureGetToken = (e) => {
+    console.log("Can't Get Token");
   };
 
   return (
@@ -70,4 +89,4 @@ const Auth: React.FC = () => {
   );
 };
 
-export default Auth;
+export default Index;

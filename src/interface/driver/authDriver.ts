@@ -1,8 +1,7 @@
 import { Auth } from '~/domain/auth';
-import { Token } from '~/interface/useCase/authUseCase';
 
 export type AuthJson = {
-  token?: Token;
+  token?: string;
   errors?: AuthError;
 };
 
