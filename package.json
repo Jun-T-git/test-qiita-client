@@ -14,7 +14,6 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "dev-dc": "docker-compose exec node node server.js",
     "dev": "node server.js",
     "build": "next build",
     "start": "next start"
