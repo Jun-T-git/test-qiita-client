@@ -2,5 +2,8 @@ module.exports = {
     // [...]
     // Replace `ts-jest` with the preset you want to use
     // from the above list
-    preset: 'ts-jest'
+    preset: 'ts-jest',
+    moduleNameMapper: {
+        "^~/(.+)$": "<rootDir>/src/$1"
+    }
 };
