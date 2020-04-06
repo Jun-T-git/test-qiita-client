@@ -2,10 +2,11 @@ version: '3.7'
 
 services:
   node:
-    build:
-      dockerfile: Dockerfile
-      context: .
-      target: dev
+    image: nakajimai/next_app:latest
+#    build:
+#      dockerfile: Dockerfile
+#      context: .
+#      target: dev
     container_name: "node"
     volumes:
       - .:/app:delegated
