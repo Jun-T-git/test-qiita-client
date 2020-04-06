@@ -144,7 +144,7 @@ describe('#findAll', () => {
         '米首都圏に自宅待機命令、違反者に罰金・禁錮刑も https://t.co/RRgCsbr3Kr @Sankei_newsから',
         884,
         243,
-          new Date('Fri Aug 26 10:14:42 +0000 2011')
+          new Date('Tue MAR 31 01:39:50 +0000 2020')
       ),
     ]);
     expect(findAllSpy).toHaveBeenCalledTimes(1);
@@ -152,4 +152,3 @@ describe('#findAll', () => {
     findAllSpy.mockReset();
   });
 });
-// TODO:jest 絶対パス読めない　
