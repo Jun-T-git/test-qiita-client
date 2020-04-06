@@ -9,7 +9,7 @@ services:
     container_name: "node"
     volumes:
       - .:/app:delegated
-    env_file: .env
+#    env_file: .env
     ports:
       - "3000:3000"
     tty: true
