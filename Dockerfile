@@ -1,5 +1,4 @@
 # Base Image
-#FROM node:10.16.3-slim as base
 FROM node:13.12.0-stretch-slim as base
 RUN apt-get update && apt-get install -y \
   git
@@ -17,6 +16,7 @@ RUN yarn && yarn cache clean
 FROM base as dev
 ENV NODE_ENV=development
 ENV PATH=/app/node_modules/.bin:$PATH
+CMD ["node","server.js"]
 
 # Source Image
 FROM base as source
@@ -27,4 +27,4 @@ FROM source as prod
 ENV NODE_ENV=production
 RUN yarn build
 ENTRYPOINT ["/tini", "--"]
-CMD ["node","server/index.js"]
+CMD ["yarn","start"]
