@@ -1,5 +1,4 @@
 import axiosBase, { AxiosInstance, AxiosResponse } from 'axios';
-import { apiKey } from '~/config.dev';
 import {Auth} from "~/domain/auth";
 
 export type LoginError = {
