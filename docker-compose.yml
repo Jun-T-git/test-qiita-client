@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
       context: .
       target: dev
+    container_name: "node"
     volumes:
       - .:/app:delegated
     env_file: .env
