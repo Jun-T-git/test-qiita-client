@@ -9,7 +9,6 @@ pipelines:
           - docker run next yarn test
         caches:
           - docker
-          - node
 definitions:
   services:
     docker:
