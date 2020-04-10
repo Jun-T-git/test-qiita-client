@@ -10,3 +10,7 @@ pipelines:
         caches:
           - docker
           - node
+definitions:
+  services:
+    docker:
+      memory: 512
