@@ -6,7 +6,7 @@ pipelines:
           - docker
         script:
           - docker build .
-          - yarn test
+          - bash yarn test
         caches:
           - docker
           - node
