@@ -5,7 +5,7 @@ pipelines:
         services:
           - docker
         script:
-          - docker build
+          - docker build .Dockerfile
           - yarn
           - yarn test
         caches:
