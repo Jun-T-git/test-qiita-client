@@ -5,9 +5,9 @@ pipelines:
         services:
           - docker
         script:
-          - docker build .
-          - docker ps
-#          - bash yarn test
+          - docker build . -t next
+          - docker run --name next -it next /bin/bash
+          - docker exec next yarn test
         caches:
           - docker
           - node
