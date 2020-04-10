@@ -6,7 +6,7 @@ pipelines:
           - docker
         script:
           - docker build . -t next
-          - docker run --name next -it next yarn test
+          - docker run next yarn test
         caches:
           - docker
           - node
