@@ -1,0 +1,10 @@
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        name: Test
+        image: nakajimai/next_app:latest
+        script:
+          - yarn
+          - yarn test
