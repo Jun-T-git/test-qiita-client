@@ -2,11 +2,10 @@ version: '3.7'
 
 services:
   node:
-    image: nakajimai/next_app:latest
-#    build:
-#      dockerfile: Dockerfile
-#      context: .
-#      target: dev
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: dev
     container_name: "node"
     volumes:
       - .:/app:delegated
@@ -14,3 +13,14 @@ services:
     ports:
       - "3000:3000"
     tty: true
+
+  minio:
+    container_name: minio
+    image: minio/minio:latest
+    ports:
+      - 9000:9000
+    volumes:
+      - ./.data/minio/data:/export
+      - ./.data/minio/config:/root/.minio
+    env_file: .env
+    command: server /export
