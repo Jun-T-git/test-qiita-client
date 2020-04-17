@@ -12,8 +12,8 @@ const UserInfo = ({ userIconUrl, userName,userScreenName }: UserInfoProps) => {
   return (
     <div className="flex items-center">
       <CircleIcon content={userIconUrl} />
-      <ShortText at={""} content={userName} />
-      <ShortText at={"@"} content={userScreenName} />
+      <ShortText content={userName} />
+      <ShortText content={`@${userScreenName}`} />
     </div>
   );
 };
