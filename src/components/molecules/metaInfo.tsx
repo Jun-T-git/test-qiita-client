@@ -28,7 +28,7 @@ const MetaInfo = ({ retweet, favorite, createdAt }: MetaInfoProps) => {
       </div>
 
       <div className="flex justify-end">
-          <ShortText at={""} content={createdAt} />
+          <ShortText content={createdAt} />
       </div>
     </>
   );
