@@ -3,3 +3,7 @@
 /.next/
 /.env
 /.data/
+/client/
+/server/
+/storybook-static/
+/src/tailwind.config.js
