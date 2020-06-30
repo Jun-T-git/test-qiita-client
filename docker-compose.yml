@@ -8,19 +8,34 @@ services:
       target: dev
     container_name: "node"
     volumes:
-      - .:/app:delegated
-#    env_file: .env
+      - ./src:/app/src:delegated
+      - ./tailwind.config.js:/app/tailwind.config.js
+      - ./.env:/app/.env
     ports:
       - "3000:3000"
     tty: true
 
-  minio:
-    container_name: minio
-    image: minio/minio:latest
-    ports:
-      - 9000:9000
+  swagger-ui:
+    image: swaggerapi/swagger-ui:latest
+    container_name: "swagger-ui"
     volumes:
-      - ./.data/minio/data:/export
-      - ./.data/minio/config:/root/.minio
-    env_file: .env
-    command: server /export
+      - ./api/openapi.yaml:/openapi.yaml
+    environment:
+      SWAGGER_JSON: /openapi.yaml
+    ports:
+      - "9001:8080"
+
+  swagger-editor:
+    image: swaggerapi/swagger-editor:latest
+    container_name: "swagger-editor"
+    ports:
+      - "9002:8080"
+
+  swagger-api:
+    image: danielgtaylor/apisprout
+    container_name: "swagger-api"
+    ports:
+      - "9003:8000"
+    volumes:
+      - ./api/openapi.yaml:/openapi.yaml
+    command: /openapi.yaml --watch
