@@ -1,7 +1,7 @@
-import { Post } from '../domain/post';
-import { User } from '../domain/user';
-import PostDriver, { PostsJson } from '../interface/driver/postDriver';
-import PostRepositoryImpl from '../repository/postRepository';
+import { Post } from '~/clean/entity/post';
+import { User } from '~/clean/entity/user';
+import PostDriver, { PostsJson } from '~/clean/interface/driver/postDriver';
+import PostRepositoryImpl from '~/clean/repository/postRepository';
 
 const postDriver: PostDriver = {
   findAll: (): Promise<PostsJson> => {

@@ -1,4 +1,4 @@
-import { Auth } from '~/domain/auth';
+import { Auth } from '~/clean/entity/auth';
 
 export class Token {
   readonly token: string;

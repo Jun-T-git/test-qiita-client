@@ -1,5 +1,5 @@
 import PostItem from '~/components/postItem';
-import {PostViewModel} from "~/interface/presenter/postPresenter";
+import {PostViewModel} from "~/clean/interface/presenter/postPresenter";
 
 type Props = {
   posts:PostViewModel[]

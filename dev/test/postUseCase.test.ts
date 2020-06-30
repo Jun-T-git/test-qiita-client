@@ -1,6 +1,6 @@
-import { Post } from "~/domain/post";
-import PostRepository from "../interface/repository/postRepository";
-import PostUseCaseImpl from "../useCase/postUseCase";
+import { Post } from "~/clean/entity/post";
+import PostRepository from "~/clean/interface/repository/postRepository";
+import PostUseCaseImpl from "~/clean/useCase/postUseCase";
 
 const postRepository: PostRepository = {
     findAll: (): Promise<Post[]> => {

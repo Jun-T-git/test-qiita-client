@@ -1,4 +1,4 @@
-import { User } from '~/domain/user';
+import { User } from '~/clean/entity/user';
 
 export class Post {
   readonly id: number;

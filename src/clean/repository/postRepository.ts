@@ -1,7 +1,7 @@
-import PostRepository from '~/interface/repository/postRepository';
-import PostDriver from '~/interface/driver/postDriver';
-import { Post } from '~/domain/post';
-import { User } from '~/domain/user';
+import PostRepository from '~/clean/interface/repository/postRepository';
+import PostDriver from '~/clean/interface/driver/postDriver';
+import { Post } from '~/clean/entity/post';
+import { User } from '~/clean/entity/user';
 import moment from "moment";
 
 export default class PostRepositoryImpl implements PostRepository {

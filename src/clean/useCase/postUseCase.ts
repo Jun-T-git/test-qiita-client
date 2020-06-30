@@ -1,6 +1,6 @@
-import { Post } from '~/domain/post';
-import { PostUseCase } from '~/interface/useCase/postUseCase';
-import PostRepository from '~/interface/repository/postRepository';
+import { Post } from '~/clean/entity/post';
+import { PostUseCase } from '~/clean/interface/useCase/postUseCase';
+import PostRepository from '~/clean/interface/repository/postRepository';
 
 export default class PostUseCaseImpl implements PostUseCase {
   readonly postRepository: PostRepository;

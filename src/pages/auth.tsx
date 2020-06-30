@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import AuthUseCaseImpl from '~/useCase/authuseCase';
-import AuthRepositoryImpl from '~/repository/authRepository';
-import AuthDriverImpl from '~/driver/authDriver';
-import { Auth } from '~/domain/auth';
+import AuthUseCaseImpl from '~/clean/useCase/authuseCase';
+import AuthRepositoryImpl from '~/clean/repository/authRepository';
+import AuthDriverImpl from '~/clean/driver/authDriver';
+import { Auth } from '~/clean/entity/auth';
 import { useRouter } from 'next/router';
 
 const Index: React.FC = () => {

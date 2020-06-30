@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostViewModel } from '~/interface/presenter/postPresenter';
+import { PostViewModel } from '~/clean/interface/presenter/postPresenter';
 import UserInfo from '~/components/molecules/userInfo';
 import Text from '~/components/atoms/text';
 import MetaInfo from '~/components/molecules/metaInfo';

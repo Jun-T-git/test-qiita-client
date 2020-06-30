@@ -1,7 +1,7 @@
-import AuthRepository from '~/interface/repository/authRepository';
-import AuthDriver, {AuthJson} from '~/interface/driver/authDriver';
-import { Auth } from '~/domain/auth';
-import {Token} from "~/interface/useCase/authUseCase";
+import AuthRepository from '~/clean/interface/repository/authRepository';
+import AuthDriver, {AuthJson} from '~/clean/interface/driver/authDriver';
+import { Auth } from '~/clean/entity/auth';
+import {Token} from "~/clean/interface/useCase/authUseCase";
 
 export default class AuthRepositoryImpl implements AuthRepository {
   private readonly authDriver: AuthDriver;

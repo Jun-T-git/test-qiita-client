@@ -1,4 +1,4 @@
-import { Auth } from '~/domain/auth';
+import { Auth } from '~/clean/entity/auth';
 
 export type AuthJson = {
   token?: string;
