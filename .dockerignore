@@ -1,2 +1,16 @@
-node_modules
+.idea
+.git
+.data
 .next
+.storybook
+api
+node_modules
+src/stories
+.env.sample
+.eslintrc.json
+.gitignore
+.prettierrc.json
+appspec.yml
+bitbucket-pipelines.yml
+docker-compose.yml
+Readme.md
