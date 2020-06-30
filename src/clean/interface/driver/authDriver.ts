@@ -10,6 +10,6 @@ export type AuthError = {
   message: string;
 };
 
-export default interface AuthDriver {
+export default interface AuthDriverInterface {
   fetch(auth: Auth): Promise<AuthJson>;
 }

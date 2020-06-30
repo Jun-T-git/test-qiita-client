@@ -7,6 +7,6 @@ export class Token {
   }
 }
 
-export interface AuthUseCase {
+export interface AuthUseCaseInterface {
   fetchToken(auth: Auth): Promise<Token>;
 }

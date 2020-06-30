@@ -1,7 +1,7 @@
 import { initAxios } from '~/clean/driver/utility/axios';
-import PostDriver, { PostJson, PostsJson } from '~/clean/interface/driver/postDriver';
+import PostDriverInterface , { PostJson, PostsJson } from '~/clean/interface/driver/postDriver';
 
-export default class PostDriverImpl implements PostDriver {
+export default class PostDriver implements PostDriverInterface {
   async findAll(): Promise<PostsJson> {
     try {
       const response = await initAxios().get(

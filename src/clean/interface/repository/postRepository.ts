@@ -1,5 +1,5 @@
 import { Post } from '~/clean/entity/post';
 
-export default interface PostRepository {
+export default interface PostRepositoryInterface {
   findAll(): Promise<Post[]>;
 }

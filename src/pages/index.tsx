@@ -1,15 +1,21 @@
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import Posts from '~/components/organisms/posts';
+import { PostViewModel } from '~/clean/interface/presenter/postPresenter';
+import { postPresenter } from '~/clean/utility/instance/logic';
 
 export default function Index() {
-  return (
-    <div>
-      <h1>Hello Next.js 👋</h1>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/posts">
-        <a>Posts</a>
-      </Link>
-    </div>
-  );
+    const [posts, setPosts] = useState<PostViewModel[]>([]);
+
+    useEffect(() => {
+        getViewModel();
+    }, []);
+
+    const getViewModel = async () => {
+        setPosts(await postPresenter.getViewModelList());
+    };
+    return (
+        <div>
+            <Posts posts={posts} />
+        </div>
+    );
 }

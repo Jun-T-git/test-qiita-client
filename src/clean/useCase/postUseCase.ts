@@ -1,11 +1,11 @@
 import { Post } from '~/clean/entity/post';
-import { PostUseCase } from '~/clean/interface/useCase/postUseCase';
-import PostRepository from '~/clean/interface/repository/postRepository';
+import { PostUseCaseInterface } from '~/clean/interface/useCase/postUseCase';
+import PostRepositoryInterface from '~/clean/interface/repository/postRepository';
 
-export default class PostUseCaseImpl implements PostUseCase {
-  readonly postRepository: PostRepository;
+export default class PostUseCase implements PostUseCaseInterface {
+  readonly postRepository: PostRepositoryInterface;
 
-  constructor(repository: PostRepository) {
+  constructor(repository: PostRepositoryInterface) {
     this.postRepository = repository;
   }
 

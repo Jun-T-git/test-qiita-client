@@ -1,5 +1,5 @@
 import { Post } from '~/clean/entity/post';
 
-export interface PostUseCase {
+export interface PostUseCaseInterface {
   fetchPosts(): Promise<Post[]>;
 }

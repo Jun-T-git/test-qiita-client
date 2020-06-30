@@ -1,8 +1,8 @@
-import AuthDriver, { AuthJson } from '~/clean/interface/driver/authDriver';
+import AuthDriverInterface , { AuthJson } from '~/clean/interface/driver/authDriver';
 import { Auth } from '~/clean/entity/auth';
 import { fetchToken } from '~/clean/driver/utility/axios';
 
-export default class AuthDriverImpl implements AuthDriver {
+export default class AuthDriver implements AuthDriverInterface  {
   async fetch(auth: Auth): Promise<AuthJson> {
     try {
       const response = await fetchToken(auth);

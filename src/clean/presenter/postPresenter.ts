@@ -1,13 +1,13 @@
-import PostPresenter, {
+import PostPresenterInterface, {
   PostViewModel,
 } from '~/clean/interface/presenter/postPresenter';
-import { PostUseCase } from '~/clean/interface/useCase/postUseCase';
+import { PostUseCaseInterface } from '~/clean/interface/useCase/postUseCase';
 import moment from 'moment';
 
-export default class PostPresenterImpl implements PostPresenter {
-  private readonly useCase: PostUseCase;
+export default class PostPresenter implements PostPresenterInterface {
+  private readonly useCase: PostUseCaseInterface;
 
-  constructor(useCase: PostUseCase) {
+  constructor(useCase: PostUseCaseInterface) {
     this.useCase = useCase;
   }
   async getViewModelList(): Promise<PostViewModel[]> {

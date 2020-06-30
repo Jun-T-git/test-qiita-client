@@ -1,13 +1,13 @@
-import PostRepository from '~/clean/interface/repository/postRepository';
-import PostDriver from '~/clean/interface/driver/postDriver';
+import PostRepositoryInterface from '~/clean/interface/repository/postRepository';
+import PostDriverInterface from '~/clean/interface/driver/postDriver';
 import { Post } from '~/clean/entity/post';
 import { User } from '~/clean/entity/user';
-import moment from "moment";
+import moment from 'moment';
 
-export default class PostRepositoryImpl implements PostRepository {
-  private readonly postDriver: PostDriver;
+export default class PostRepository implements PostRepositoryInterface {
+  private readonly postDriver: PostDriverInterface;
 
-  constructor(postDriver: PostDriver) {
+  constructor(postDriver: PostDriverInterface) {
     this.postDriver = postDriver;
   }
 
@@ -32,7 +32,7 @@ export default class PostRepositoryImpl implements PostRepository {
       );
     } else if (errors) {
       if (errors[0].code == 215) {
-        console.log('No Token')
+        console.log('No Token');
       }
     }
     return [];
