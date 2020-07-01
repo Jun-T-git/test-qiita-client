@@ -3,19 +3,21 @@ import Posts from '~/components/organisms/posts';
 import { PostViewModel } from '~/clean/interface/presenter/postPresenter';
 import { postPresenter } from '~/clean/utility/instance/logic';
 
-export default function Index() {
-    const [posts, setPosts] = useState<PostViewModel[]>([]);
+export default function Index({ hasToken: hasToken }) {
+  const [posts, setPosts] = useState<PostViewModel[]>([]);
 
-    useEffect(() => {
-        getViewModel();
-    }, []);
+  useEffect(() => {
+    if (hasToken) {
+      getViewModel();
+    }
+  }, [hasToken]);
 
-    const getViewModel = async () => {
-        setPosts(await postPresenter.getViewModelList());
-    };
-    return (
-        <div>
-            <Posts posts={posts} />
-        </div>
-    );
+  const getViewModel = async () => {
+    setPosts(await postPresenter.getViewModelList());
+  };
+  return (
+    <div>
+      <Posts posts={posts} />
+    </div>
+  );
 }
