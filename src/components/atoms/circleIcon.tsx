@@ -1,5 +1,4 @@
 import React from 'react';
-import { PostViewModel } from '~/interface/presenter/postPresenter';
 
 type Props = {
   content: string;
