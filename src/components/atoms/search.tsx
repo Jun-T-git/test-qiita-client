@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostViewModel } from '~/interface/presenter/postPresenter';
+//import { PostViewModel } from '~/interface/presenter/postPresenter';
 
 type Props = {
   content: string;
@@ -7,9 +7,7 @@ type Props = {
 
 export const SearchInput = ({ content }: Props) => {
   return (
-    <button className={"h-2 w-2"}>
-      {content}
-    </button>
+    <input className={'h-10 w-full border-solid border-2'} type="search" placeholder={content} />
   );
 };
 

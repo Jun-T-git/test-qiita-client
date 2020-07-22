@@ -9,7 +9,7 @@ export default {
 export const buttonIcon = () => {
   return (
     <ButtonIcon
-      content={"ログイン"}
+      content={'ログイン'}
     />
   );
 };

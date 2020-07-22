@@ -1,5 +1,4 @@
 import React from 'react';
-import { PostViewModel } from '~/interface/presenter/postPresenter';
 
 type Props = {
   content: string;
@@ -7,7 +6,7 @@ type Props = {
 
 export const ButtonIcon = ({ content }: Props) => {
   return (
-    <button className={"h-2 w-2"}>
+    <button className={'h-15 w-full rounded-sm bg-gray-300'}>
       {content}
     </button>
   );
