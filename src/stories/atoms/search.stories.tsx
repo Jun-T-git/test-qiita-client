@@ -8,8 +8,6 @@ export default {
 
 export const searchInput = () => {
   return (
-    <SearchInput
-      content={"ログイン"}
-    />
+    <SearchInput content={'検索内容'}/>
   );
 };

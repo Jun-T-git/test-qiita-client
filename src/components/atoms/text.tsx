@@ -1,13 +1,17 @@
 import React from 'react';
+//import { PostViewModel } from '~/interface/presenter/postPresenter';
 
 type Props = {
-    content: string;
+  content: string;
+  sizeColor?: string;
 };
 
-const Text = ({ content }: Props) => {
-    return (
-        <div className="text-lg text-gray-700 font-medium">{content}</div>
-    );
+export const Text = ({ content, sizeColor }: Props) => {
+  return (
+    <p className={`text-base ${sizeColor}`}>
+      {content}
+    </p>
+  );
 };
 
 export default Text;

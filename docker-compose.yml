@@ -11,8 +11,9 @@ services:
       - ./src:/app/src:delegated
       - ./tailwind.config.js:/app/tailwind.config.js
       - ./.env:/app/.env
+      - ./public:/app/public
     ports:
-      - "3000:3000"
+      - "5000:5000"
     tty: true
 
   swagger-ui:

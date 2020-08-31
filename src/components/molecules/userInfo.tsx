@@ -1,5 +1,5 @@
 import React from 'react';
-import CircleIcon from '~/components/atoms/circleIcon';
+import CircleIcon, { SelectboxSize } from '~/components/atoms/circleIcon';
 import ShortText from '~/components/atoms/shortText';
 
 export type UserInfoProps = {
@@ -11,7 +11,7 @@ export type UserInfoProps = {
 const UserInfo = ({ userIconUrl, userName,userScreenName }: UserInfoProps) => {
   return (
     <div className="flex items-center">
-      <CircleIcon content={userIconUrl} />
+      <CircleIcon content={userIconUrl} size={SelectboxSize.S}/>
       <ShortText content={userName} />
       <ShortText content={`@${userScreenName}`} />
     </div>
