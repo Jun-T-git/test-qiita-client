@@ -7,11 +7,7 @@ type Props = {
 };
 
 export const Text = ({ content, sizeColor }: Props) => {
-  return (
-    <p className={`text-base ${sizeColor}`}>
-      {content}
-    </p>
-  );
+  return <p className={sizeColor}>{content}</p>;
 };
 
 export default Text;

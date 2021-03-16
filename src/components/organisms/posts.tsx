@@ -1,19 +1,17 @@
 import PostItem from '~/components/postItem';
-import {PostViewModel} from "~/clean/interface/presenter/postPresenter";
+import { PostViewModel } from '~/clean/interface/presenter/postPresenter';
 
 type Props = {
-  posts:PostViewModel[]
+  posts: PostViewModel[];
 };
 
 const Posts = ({ posts }: Props) => {
-
-
   return (
     <>
       {posts.map((post) => (
-          <div className="mb-5">
-            <PostItem key={post.id} post={post} />
-          </div>
+        <div className="mb-5" key={post.id}>
+          <PostItem post={post} />
+        </div>
       ))}
     </>
   );

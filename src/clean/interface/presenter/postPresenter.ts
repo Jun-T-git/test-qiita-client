@@ -4,34 +4,37 @@ export default interface PostPresenterInterface {
 
 export class PostViewModel {
   readonly id: number;
-  readonly userId: number;
-  readonly userScreenName: string;
+  readonly userId: string;
   readonly userName: string;
   readonly userIconUrl: string;
-  readonly text: string;
-  readonly favoriteCount: number;
-  readonly retweetCount: number;
+  readonly url: string;
+  readonly title: string;
+  readonly body: string;
+  readonly tagList: string[];
+  readonly likesCount: number;
   readonly createdAt: string;
 
   constructor(
     id: number,
-    userId: number,
-    userScreenName: string,
+    userId: string,
     userName: string,
     userIconUrl: string,
-    text: string,
-    favoriteCount: number,
-    retweetCount: number,
+    url: string,
+    title: string,
+    body: string,
+    tagList: string[],
+    likesCount: number,
     createAt: string
   ) {
     this.id = id;
     this.userId = userId;
-    this.userScreenName = userScreenName;
     this.userName = userName;
     this.userIconUrl = userIconUrl;
-    this.text = text;
-    this.favoriteCount = favoriteCount;
-    this.retweetCount = retweetCount;
+    this.url = url;
+    this.title = title;
+    this.body = body;
+    this.tagList = tagList;
+    this.likesCount = likesCount;
     this.createdAt = createAt;
   }
 }

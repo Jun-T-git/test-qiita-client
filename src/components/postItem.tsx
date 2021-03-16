@@ -10,20 +10,37 @@ type Props = {
 
 const PostItem = ({ post }: Props) => {
   return (
-    <div className="flex flex-col bg-white px-8 py-6 max-w-sm mx-auto rounded-lg shadow-lg">
+    <div className="relative flex flex-col bg-white px-8 py-6 max-w-3xl mx-auto rounded-lg shadow-lg hover:bg-gray-100">
       <div className="mt-4">
         <UserInfo
           userIconUrl={post.userIconUrl}
           userName={post.userName}
-          userScreenName={post.userScreenName}
+          userScreenName={post.userId}
+        />
+        <a
+          href={post.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={'absolute top-0 left-0 h-full w-full'}
         />
       </div>
 
-      <div className="my-4">
-        <Text content={post.text} />
+      <div className="my-4 text-lg font-bold">
+        <Text content={post.title} />
       </div>
 
-      <MetaInfo retweet={post.retweetCount} favorite={post.favoriteCount} createdAt={post.createdAt} />
+      <MetaInfo
+        tagList={post.tagList}
+        likesCount={post.likesCount}
+        createdAt={post.createdAt}
+      />
+
+      <a
+        href={post.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={'absolute top-0 left-0 h-full w-full'}
+      />
     </div>
   );
 };

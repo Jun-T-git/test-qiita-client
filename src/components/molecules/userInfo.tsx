@@ -8,10 +8,10 @@ export type UserInfoProps = {
   userScreenName: string;
 };
 
-const UserInfo = ({ userIconUrl, userName,userScreenName }: UserInfoProps) => {
+const UserInfo = ({ userIconUrl, userName, userScreenName }: UserInfoProps) => {
   return (
     <div className="flex items-center">
-      <CircleIcon content={userIconUrl} size={SelectboxSize.S}/>
+      <CircleIcon content={userIconUrl} size={SelectboxSize.S} />
       <ShortText content={userName} />
       <ShortText content={`@${userScreenName}`} />
     </div>
